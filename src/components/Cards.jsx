@@ -3,13 +3,22 @@ import style from "./Cards.module.css";
 
 function Cards() {
   return (
-    <div>
-      {/* <h2>List of cards</h2> */}
-      <div className={style.cardDiv}>
-        <div className={style.card}>Card 1</div>
-        <div className={style.card}>Card 2</div>
-        <div className={style.card}>Card 3</div>
-        <div className={style.card}>Card 4</div>
+    <div className={style.cardDiv}>
+      <div className={style.card}>
+        <h5>Card 1</h5>
+        <h6>Name</h6>
+      </div>
+      <div className={style.card}>
+        <h5>Card 2</h5>
+        <h6>Name</h6>
+      </div>
+      <div className={style.card}>
+        <h5>Card 3</h5>
+        <h6>Name</h6>
+      </div>
+      <div className={style.card}>
+        <h5>Card 4</h5>
+        <h6>Name</h6>
       </div>
     </div>
   );
