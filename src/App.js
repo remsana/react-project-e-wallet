@@ -1,5 +1,6 @@
 import "./App.css";
 import Homepage from "./pages/Homepage";
+import Addcardpage from "./pages/Addcard";
 import {Switch, Route} from "react-router-dom";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
      <Switch>
      <Route exact path="/" render={(props) => <Homepage {...props} />} />
-          
+    <Route path="/addcard" render={(props) => <Addcardpage {...props}/>}/>   
         
         </Switch>
     </div>
