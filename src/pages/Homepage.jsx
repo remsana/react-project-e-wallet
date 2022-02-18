@@ -5,7 +5,7 @@ function Homepage() {
   return (
     <div>
         <h2>List of Cards</h2>
-       <Cards/>       
+       <Cards />       
     </div>
   );
 }
