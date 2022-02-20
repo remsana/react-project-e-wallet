@@ -1,12 +1,29 @@
 import React from "react";
 import style from "./Card.module.css";
+import { deleteCard, moveCard } from "../redux/homepageSlice";
+import { useDispatch } from "react-redux";
 
-function Card({ card }) {
-  console.log(card);
+function Card({ card, index }) {
+  const dispatch = useDispatch();
+
+  const handleDeleteCard = (id) => {
+    dispatch(deleteCard(id));
+  };
+
+  const handleMoveCard = (index) => {
+    dispatch(moveCard(index));
+  };
+
   return (
-    <div className={style.card}>
-      <h5 >Card No. {card.id}</h5>
-      <h6>{card.firstName} {card.lastName}</h6>
+    <div
+      className={style.card}
+      onClick={() => {
+        handleMoveCard(index);
+      }}
+    >
+      <h6>
+         {card.firstName} {card.lastName}
+      </h6>
     </div>
   );
 }
