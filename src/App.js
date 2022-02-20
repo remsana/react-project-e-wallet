@@ -1,6 +1,6 @@
 import "./App.css";
 import Homepage from "./pages/Homepage";
-import Addcardpage from "./pages/Addcard";
+import Addcardpage from "./pages/Addcardpage";
 import {Switch, Route} from "react-router-dom";
 
 function App() {
