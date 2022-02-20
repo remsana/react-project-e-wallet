@@ -2,3 +2,10 @@
   text-align: center;
 }
 
+.cardDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
