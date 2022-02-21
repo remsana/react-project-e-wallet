@@ -11,20 +11,16 @@ const homepageSlice = createSlice({
 
     cards: [
       {
-        id: 1,
+        id: 2,
         firstName: "Card No. 1",
         lastName: "Here is the first in array",
       },
       {
-        id: 2,
+        id: 3,
         firstName: "Card No. 2",
         lastName: "Here is the second in array",
       },
-      {
-        id: 3,
-        firstName: "Card No. 3",
-        lastName: "Here is the third in array",
-      },
+      
     ],
   },
   reducers: {
@@ -32,18 +28,14 @@ const homepageSlice = createSlice({
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
     moveCard: (state, action) => {
-
       state.cards.push(state.activeCard);
-
       state.activeCard = {
         id: state.cards[action.payload].id,
         firstName: state.cards[action.payload].firstName,
         lastName: state.cards[action.payload].lastName,
       };
-      console.log(state.activeCard);
-
-      state.cards = state.cards.filter((card, index) => index !== action.payload);
-      // state.cards = state.cards.splice(action.payload, 1);
+      // console.log(state.activeCard);
+      state.cards = state.cards.filter((card, index) => index !== action.payload);      
       console.log(state.cards);
 
       
