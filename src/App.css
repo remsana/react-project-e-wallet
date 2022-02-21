@@ -2,10 +2,40 @@
   text-align: center;
 }
 
-.cardDetails{
+
+  input {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s;
+  }
+
+  .details{
+   
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
 
-}
+  }
+
+  .Card{
+   border-radius: 25px;
+     border:2px solid black;
+     margin:50px;
+     padding: 20px;
+     background-color: lightcyan;
+     height: 300px;
+     width:500px;
+    
+
+
+  }
 
