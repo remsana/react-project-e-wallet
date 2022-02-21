@@ -1,5 +1,5 @@
 import React from "react";
-import { act } from "react-dom/test-utils";
+// import { act } from "react-dom/test-utils";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
