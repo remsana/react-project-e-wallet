@@ -20,7 +20,7 @@ const homepageSlice = createSlice({
         firstName: "Card No. 2",
         lastName: "Here is the second in array",
       },
-      
+            
     ],
   },
   reducers: {
@@ -36,7 +36,7 @@ const homepageSlice = createSlice({
       };
       // console.log(state.activeCard);
       state.cards = state.cards.filter((card, index) => index !== action.payload);      
-      console.log(state.cards);
+      // console.log(state.cards);
 
       
     },
