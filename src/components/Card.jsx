@@ -16,9 +16,11 @@ function Card({ card, index }) {
 
   return (
     <div
-      className={style.card}
+      className={style.card} 
       onClick={() => {
         handleMoveCard(index);
+      }} onDoubleClick = {() => {
+        handleDeleteCard(card.id);
       }}
     >
       <h6>

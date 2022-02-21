@@ -1,5 +1,8 @@
 import React from "react";
-// import { act } from "react-dom/test-utils";
+
+
+
+
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -7,10 +10,7 @@ import Card from "./Card";
 import style from "./Card.module.css";
 
 function Cards() {
-  const { cards, activeCard } = useSelector((state) => state.homepage);
-  // console.log(cards.length);
-  // console.log(activeCard);  
-  // console.log(cards[0])
+  const { cards, activeCard } = useSelector((state) => state.homepage);  
 
   return (
     <div className={style.cardDiv}>
