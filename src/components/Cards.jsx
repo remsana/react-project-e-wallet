@@ -10,8 +10,6 @@ function Cards() {
   const { cards, activeCard } = useSelector((state) => state.homepage);
   const { userName, status } = useSelector((state) => state.api);
 
-
-
   // console.log(userName);
   // console.log(status);
   const dispatch = useDispatch();
@@ -44,8 +42,8 @@ function Cards() {
         {cards.length < 3 ? (
           <Link to={{
             pathname: "/addcard",
-            firstName: `${userName.name.first}`,
-            lastName: `${userName.name.last}`
+            // firstName: `${userName.name.first}`,
+            // lastName: `${userName.name.last}`
             }}>
             <button className={style.AddNewCardBtn}> Add a new card</button>
           </Link>

@@ -39,11 +39,6 @@ const homepageSlice = createSlice({
     }
   },
   reducers: {
-    test: (state, action) => {
-      console.log(state.activeCard);
-      console.log(action.payload);
-      
-    },
     deleteCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
@@ -83,5 +78,9 @@ const homepageSlice = createSlice({
   },
 });
 
+<<<<<<< HEAD
+export const { deleteCard, moveCard } = homepageSlice.actions;
+=======
 export const { deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor } = homepageSlice.actions;
+>>>>>>> master
 export default homepageSlice.reducer;
