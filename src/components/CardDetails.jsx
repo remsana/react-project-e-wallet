@@ -1,13 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor} from "../redux/addcardpageSlice";
+import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor} from "../redux/homepageSlice";
 
 const CardDetails = () => {
   const dispatch = useDispatch();
-  const {cardNo, firstName,lastName,validity,ccvNo,vendor} = useSelector((state) => state.addcard);
+  
+  const {cardNo, firstName,lastName,validity,ccvNo,vendor} = useSelector((state) => state.homepage);
 
-
+  
   const cardDetailsInputs = () => {
+     
       let cardNoValue = document.querySelector("#cardNumber").value;
+      console.log(cardNoValue);
+    console.log(typeof(cardNoValue));
       let firstNameValue = document.querySelector("#firstNameInput").value;
       let lastNameValue = document.querySelector("#lastNameInput").value;
       let expiryDateValue = document.querySelector("#expiryDate").value;
@@ -21,7 +25,16 @@ const CardDetails = () => {
     dispatch(addCCV(ccvValue));
     dispatch(addVendor(vendorValue));
   }
-
+// console.log(cardDetailsInputs);
+//   let addCardInputs = {
+//       cardNumber:document.querySelector("#cardNumber").value,
+//       personFirstName:document.querySelector("#firstNameInput").value,
+//       personLastName:document.querySelector("#lastNameInput").value,
+//       cardvalidity:document.querySelector("#expiryDate").value,
+//       ccvCard:document.querySelector("#ccv").value,
+//       vendorCard:document.querySelector("#dropdown").value
+//   }
+//   console.log(addCardInputs);
   
 
     return(
@@ -30,7 +43,8 @@ const CardDetails = () => {
             <div className="details">
             <div className="Card">
                 <ul>
-                    <li>{cardNo}</li>
+
+                <li>{cardNo}</li>
                 <li>{firstName}</li>
                 <li>{lastName}</li>
                 <li>{validity}</li>
@@ -47,7 +61,7 @@ const CardDetails = () => {
             CCV:<input type="tel" id="ccv"/>
             <br/>
             <select id="dropdown">
-            <option disabled selected="true">--Select--</option>
+            <option disabled>--Select--</option>
             <option value="Master Card">Master Card</option>
             <option value="Visa">Visa</option>
             <option value="American Express">American Express</option>
