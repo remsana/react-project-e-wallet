@@ -22,11 +22,7 @@ const CardDetails = () => {
     dispatch(addVendor(vendorValue));
   }
 
-//   const nameFirst = () => {
-//     let firstNameValue = document.querySelector("#firstNameInput").value;
-//     console.log(firstNameValue);
-//     dispatch(addFirstName(firstNameValue));
-//   }
+  
 
     return(
         <div >
