@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {apiSlice} from "./apiSlice";
+
 
 const homepageSlice = createSlice({
   name: "homepage",
@@ -78,9 +78,5 @@ const homepageSlice = createSlice({
   },
 });
 
-<<<<<<< HEAD
-export const { deleteCard, moveCard } = homepageSlice.actions;
-=======
 export const { deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor } = homepageSlice.actions;
->>>>>>> master
 export default homepageSlice.reducer;
