@@ -32,5 +32,8 @@ border-radius: 5px;
 
 .AddNewCardBtn {
 margin-bottom: 20px;
+padding: 10px;
+/* border-radius: 75%; */
+border-radius: 10px;
 
 }

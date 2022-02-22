@@ -1,12 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {apiSlice} from "./apiSlice";
 
 const homepageSlice = createSlice({
   name: "homepage",
   initialState: {
     activeCard: {
       id: 1,
-      firstName: "Active Card",
-      lastName: "Here is the default active card",
+      cardNo: "1212 1212 1212 1212",
+      firstName:"",
+      lastName:"",
+      validity:"",
+      ccvNo:"",
+      vendor:""
     },
 
     cards: [
@@ -24,6 +29,11 @@ const homepageSlice = createSlice({
     ],
   },
   reducers: {
+    test: (state, action) => {
+      console.log(state.activeCard);
+      console.log(action.payload);
+      
+    },
     deleteCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
@@ -36,12 +46,11 @@ const homepageSlice = createSlice({
       };
       // console.log(state.activeCard);
       state.cards = state.cards.filter((card, index) => index !== action.payload);      
-      // console.log(state.cards);
-
-      
-    },
+      // console.log(state.cards);      
+    }
+    
   },
 });
 
-export const { deleteCard, moveCard } = homepageSlice.actions;
+export const { deleteCard, moveCard, test } = homepageSlice.actions;
 export default homepageSlice.reducer;
