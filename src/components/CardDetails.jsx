@@ -1,12 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
-import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor} from "../redux/homepageSlice";
+import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor,newCard} from "../redux/homepageSlice";
 
 const CardDetails = () => {
   const dispatch = useDispatch();
-  
-  const {cardNo, firstName,lastName,validity,ccvNo,vendor} = useSelector((state) => state.homepage);
 
+  const {cardNo,firstName,lastName,validity,ccvNo,vendor} = useSelector((state)=> state.homepage)
   
+  const handleAddCard = () => {
+    dispatch(newCard());
+  };
+
+
   const cardDetailsInputs = () => {
      
       let cardNoValue = document.querySelector("#cardNumber").value;
@@ -25,17 +29,7 @@ const CardDetails = () => {
     dispatch(addCCV(ccvValue));
     dispatch(addVendor(vendorValue));
   }
-// console.log(cardDetailsInputs);
-//   let addCardInputs = {
-//       cardNumber:document.querySelector("#cardNumber").value,
-//       personFirstName:document.querySelector("#firstNameInput").value,
-//       personLastName:document.querySelector("#lastNameInput").value,
-//       cardvalidity:document.querySelector("#expiryDate").value,
-//       ccvCard:document.querySelector("#ccv").value,
-//       vendorCard:document.querySelector("#dropdown").value
-//   }
-//   console.log(addCardInputs);
-  
+
 
     return(
         <div >
@@ -43,7 +37,7 @@ const CardDetails = () => {
             <div className="details">
             <div className="Card">
                 <ul>
-
+                 
                 <li>{cardNo}</li>
                 <li>{firstName}</li>
                 <li>{lastName}</li>
@@ -67,7 +61,7 @@ const CardDetails = () => {
             <option value="American Express">American Express</option>
           </select>
             <br/>
-            <button onClick= {cardDetailsInputs}>Add card</button>
+            <button onClick= {()=>{cardDetailsInputs(handleAddCard())}}>Add card</button>
             </div>
         </div>
     )
