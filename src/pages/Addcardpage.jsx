@@ -1,5 +1,7 @@
 import CardDetails from "../components/CardDetails"
-const Addcardpage = () => {
+const Addcardpage = (props) => {
+    console.log(props.location.firstName)
+    console.log(props.location.lastName)
     return (
         <div>
             <h2>Fill the following details to add a new card:</h2>

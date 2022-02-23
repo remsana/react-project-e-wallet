@@ -6,12 +6,12 @@ const homepageSlice = createSlice({
   initialState: {
     activeCard: {
       id: 1,
-      cardNo: "1212 1212 1212 1212",
-      firstName:"",
-      lastName:"",
-      validity:"",
-      ccvNo:"",
-      vendor:""
+      cardNo: "5121 5121 5121 5121",
+      firstName: "",
+      lastName: "",
+      validity: "",
+      ccvNo: "",
+      vendor: "",
     },
 
     cards: [
@@ -25,10 +25,10 @@ const homepageSlice = createSlice({
         firstName: "Card No. 2",
         lastName: "Here is the second in array",
       },
-            
     ],
 
     addCard: {
+
             id: "",
             cardNo: "",
             firstName:"",
@@ -37,8 +37,16 @@ const homepageSlice = createSlice({
             ccvNo:"",
             vendor:""
     }
+
   },
   reducers: {
+
+    activeCardDetails: (state, action) => {
+      console.log(action.payload);
+      state.activeCard.firstName = action.payload.name.first;
+      state.activeCard.lastName = action.payload.name.last;
+     
+    },
     deleteCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
@@ -50,12 +58,13 @@ const homepageSlice = createSlice({
         lastName: state.cards[action.payload].lastName,
       };
       // console.log(state.activeCard);
-      state.cards = state.cards.filter((card, index) => index !== action.payload);      
+      state.cards = state.cards.filter(
+        (card, index) => index !== action.payload
+      );
       console.log(state.cards);
-
-      
     },
     addCardNo: (state, action) => {
+
       state.cardNo = action.payload;
       
   },
@@ -92,4 +101,5 @@ const homepageSlice = createSlice({
 });
 
 export const { deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor,newCard } = homepageSlice.actions;
+      
 export default homepageSlice.reducer;
