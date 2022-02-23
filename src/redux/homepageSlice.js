@@ -6,12 +6,12 @@ const homepageSlice = createSlice({
   initialState: {
     activeCard: {
       id: 1,
-      cardNo: "1212 1212 1212 1212",
-      firstName:"",
-      lastName:"",
-      validity:"",
-      ccvNo:"",
-      vendor:""
+      cardNo: "5121 5121 5121 5121",
+      firstName: "",
+      lastName: "",
+      validity: "",
+      ccvNo: "",
+      vendor: "",
     },
 
     cards: [
@@ -25,20 +25,26 @@ const homepageSlice = createSlice({
         firstName: "Card No. 2",
         lastName: "Here is the second in array",
       },
-            
     ],
 
     addCard: {
-            id: "",
-            cardNo: " ",
-            firstName:" ",
-            lastName:" ",
-            validity:" ",
-            ccvNo:" ",
-            vendor:" "
-    }
+      id: "",
+      cardNo: " ",
+      firstName: " ",
+      lastName: " ",
+      validity: " ",
+      ccvNo: " ",
+      vendor: " ",
+    },
   },
   reducers: {
+
+    activeCardDetails: (state, action) => {
+      console.log(action.payload);
+      state.activeCard.firstName = action.payload.name.first;
+      state.activeCard.lastName = action.payload.name.last;
+     
+    },
     deleteCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
@@ -50,33 +56,41 @@ const homepageSlice = createSlice({
         lastName: state.cards[action.payload].lastName,
       };
       // console.log(state.activeCard);
-      state.cards = state.cards.filter((card, index) => index !== action.payload);      
+      state.cards = state.cards.filter(
+        (card, index) => index !== action.payload
+      );
       console.log(state.cards);
-
-      
     },
     addCardNo: (state, action) => {
       state.cardNo += action.payload;
-      
-  },
-  addFirstName:(state,action)=>{
+    },
+    addFirstName: (state, action) => {
       state.firstName += action.payload;
-  },
-  addLastName:(state,action)=> {
+    },
+    addLastName: (state, action) => {
       state.lastName += action.payload;
-  },
-  addValidity:(state,action)=>{
+    },
+    addValidity: (state, action) => {
       state.validity += action.payload;
-  },
-  addCCV:(state,action) =>{
+    },
+    addCCV: (state, action) => {
       state.ccvNo += action.payload;
-  },
-  addVendor:(state,action) => {
+    },
+    addVendor: (state, action) => {
       state.vendor += action.payload;
-      
-  }
+    },
   },
 });
 
-export const { deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor } = homepageSlice.actions;
+export const {
+  activeCardDetails,
+  deleteCard,
+  moveCard,
+  addCardNo,
+  addFirstName,
+  addLastName,
+  addValidity,
+  addCCV,
+  addVendor,
+} = homepageSlice.actions;
 export default homepageSlice.reducer;
