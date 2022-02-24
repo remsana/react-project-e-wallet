@@ -1,21 +1,29 @@
 import { useSelector, useDispatch } from "react-redux";
 import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor,newCard} from "../redux/homepageSlice";
-
+import {Link} from "react-router-dom";
 const CardDetails = () => {
   const dispatch = useDispatch();
 
   const {cardNo,firstName,lastName,validity,ccvNo,vendor} = useSelector((state)=> state.homepage)
-  
-  const handleAddCard = () => {
-    dispatch(newCard());
-  };
+  const {cards} = useSelector((state) => state.homepage);
+  // const handleAddCard = () => {
+  //   dispatch(newCard());
+   
+  // };
+// console.log(handleAddCard);
 
+// const handleAddCardNo = ()=>{
+//   let cardNoValue = document.querySelector("#cardNumber").value;
+//   console.log(cardNoValue);
+//     console.log(typeof(cardNoValue));
+//     dispatch(addCardNo(cardNoValue));
+// }
 
   const cardDetailsInputs = () => {
      
       let cardNoValue = document.querySelector("#cardNumber").value;
-      console.log(cardNoValue);
-    console.log(typeof(cardNoValue));
+      console.log("cardValue:", cardNoValue);
+    
       let firstNameValue = document.querySelector("#firstNameInput").value;
       let lastNameValue = document.querySelector("#lastNameInput").value;
       let expiryDateValue = document.querySelector("#expiryDate").value;
@@ -29,7 +37,8 @@ const CardDetails = () => {
     dispatch(addCCV(ccvValue));
     dispatch(addVendor(vendorValue));
   }
-
+   
+  // cardDetailsInputs();
 
     return(
         <div >
@@ -61,7 +70,14 @@ const CardDetails = () => {
             <option value="American Express">American Express</option>
           </select>
             <br/>
-            <button onClick= {()=>{cardDetailsInputs(handleAddCard())}}>Add card</button>
+            <Link to={{
+              pathname: "/",
+              firstName: cards.firstName,
+              lastName:cards.lastName
+            }}>
+            {/* <button onClick= {() => {dispatch(newCard())}}>Add card</button> */}
+            <button onClick= {()=> {dispatch(newCard(cardDetailsInputs()))}}>Add card</button>
+            </Link>
             </div>
         </div>
     )
