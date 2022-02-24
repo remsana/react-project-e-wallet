@@ -118,6 +118,6 @@ const homepageSlice = createSlice({
   },
 });
 
-export const { deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor,newCard } = homepageSlice.actions;
+export const { activeCardDetails, deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor,newCard } = homepageSlice.actions;
       
 export default homepageSlice.reducer;

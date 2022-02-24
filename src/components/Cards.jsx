@@ -53,7 +53,6 @@ function Cards() {
               lastName: userName.name.last,
             }}
           >
-<<<<<<< HEAD
             <button
               onClick={() => {
                 console.log(`${userName.name.first}`);
@@ -64,13 +63,6 @@ function Cards() {
               {" "}
               Add a new card
             </button>
-=======
-            <button onClick= {() => {
-              console.log(`${userName.name.first}`)
-              console.log(`${userName.name.last}`)
-            }}className={style.AddNewCardBtn}> Add a new card</button>
-
->>>>>>> master
           </Link>
         ) : (
           console.log("cant add")
