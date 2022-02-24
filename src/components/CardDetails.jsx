@@ -47,7 +47,7 @@ const CardDetails = ({firstname, lastname}) => {
                 </ul>
 
 </div>
-            CardNumber: <input type="tel" id="cardNumber" onFocus={}/>
+            CardNumber: <input type="tel" id="cardNumber" />
             Firstname:<input type="text" id="firstNameInput" disabled/>
             Lastname:<input type="text" id="lastNameInput" disabled/>
             Valid thru: <input type="date" id="expiryDate"/>
