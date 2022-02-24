@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const homepageSlice = createSlice({
   name: "homepage",
   initialState: {
@@ -16,39 +15,36 @@ const homepageSlice = createSlice({
 
     cards: [
       {
-      id: 2,
-      cardNo: "987654321",
-      firstName: "",
-      lastName: "",
-      validity: "",
-      ccvNo: "",
-      vendor: "Visa",
+        id: 2,
+        cardNo: "987654321",
+        firstName: "",
+        lastName: "",
+        validity: "",
+        ccvNo: "",
+        vendor: "Visa",
       },
       {
-      id: 3,
-      cardNo: "123456789",
-      firstName: "",
-      lastName: "",
-      validity: "",
-      ccvNo: "",
-      vendor: "American Express",
+        id: 3,
+        cardNo: "123456789",
+        firstName: "",
+        lastName: "",
+        validity: "",
+        ccvNo: "",
+        vendor: "American Express",
       },
     ],
 
     addCard: {
-
-            id: "",
-            cardNo: "",
-            firstName:"",
-            lastName:"",
-            validity:"",
-            ccvNo:"",
-            vendor:""
-    }
-
+      id: "",
+      cardNo: "",
+      firstName: "",
+      lastName: "",
+      validity: "",
+      ccvNo: "",
+      vendor: "",
+    },
   },
   reducers: {
-
     activeCardDetails: (state, action) => {
       // console.log(action.payload);
       state.activeCard.firstName = action.payload.name.first;
@@ -58,11 +54,9 @@ const homepageSlice = createSlice({
       state.activeCard.validity = state.activeCard.validity;
       state.activeCard.ccvNo = state.activeCard.ccvNo;
       state.activeCard.vendor = state.activeCard.vendor;
-      
-     
     },
     deleteCard: (state, action) => {
-      state.cards = state.cards.filter((card) => card.id !== action.payload);
+      state.cards = state.cards.filter((card, index) => index !== action.payload);
     },
     moveCard: (state, action) => {
       state.cards.push(state.activeCard);
@@ -73,7 +67,7 @@ const homepageSlice = createSlice({
         cardNo: state.cards[action.payload].cardNo,
         validity: state.cards[action.payload].validity,
         ccvNo: state.cards[action.payload].ccvNo,
-        vendor: state.cards[action.payload].vendor
+        vendor: state.cards[action.payload].vendor,
       };
       console.log(state.activeCard);
       state.cards = state.cards.filter(
@@ -81,34 +75,64 @@ const homepageSlice = createSlice({
       );
       console.log(state.cards);
     },
-    addCardNo: (state, action) => {     
-      state.addCard.cardNo = action.payload; 
-      console.log( "addCard state:", state.addCard.cardNo); 
-  },
-  addFirstName:(state,action)=>{
+    addCardNo: (state, action) => {
+      state.addCard.cardNo = action.payload;
+      console.log("addCard state:", state.addCard.cardNo);
+    },
+    addFirstName: (state, action) => {
       state.addCard.firstName = action.payload;
-      console.log( "addCard state:", state.addCard.firstName); 
-  },
-  addLastName:(state,action)=> {
+      console.log("addCard state:", state.addCard.firstName);
+    },
+    addLastName: (state, action) => {
       state.addCard.lastName = action.payload;
-  },
-  addValidity:(state,action)=>{
+    },
+    addValidity: (state, action) => {
       state.addCard.validity = action.payload;
-  },
-  addCCV:(state,action) =>{
+    },
+    addCCV: (state, action) => {
       state.addCard.ccvNo = action.payload;
-  },
-  addVendor:(state,action) => {
+    },
+    addVendor: (state, action) => {
       state.addCard.vendor = action.payload;
+<<<<<<< HEAD
+    },
+    newCard: (state) => {
+      state.cards.push(state.addCard);
+
+      //  state.addCard = {
+      //    id: state.cards[action.payload].id,
+      //    firstName:state.cards[action.payload].firstName,
+      //    lastName:state.cards[action.payload].lastName,
+      //    cardNo:state.cards[action.payload].cardNo,
+      //    validity:state.cards[action.payload].validity,
+      //    ccvNo:state.cards[action.payload].ccvNo,
+      //    vendor:state.cards[action.payload].vendor,
+      //  };
+
+      console.log(state.addCard);
+    },
+=======
       
   },
   newCard:(state) => {
     state.cards.push(state.addCard);
     //  console.log(state.addCard);
   }
+>>>>>>> master
   },
 });
 
-export const { activeCardDetails, deleteCard, moveCard,addCardNo,addFirstName,addLastName,addValidity,addCCV,addVendor,newCard } = homepageSlice.actions;
-      
+export const {
+  activeCardDetails,
+  deleteCard,
+  moveCard,
+  addCardNo,
+  addFirstName,
+  addLastName,
+  addValidity,
+  addCCV,
+  addVendor,
+  newCard,
+} = homepageSlice.actions;
+
 export default homepageSlice.reducer;
