@@ -1,31 +1,21 @@
 import { useSelector, useDispatch } from "react-redux";
 import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor,newCard} from "../redux/homepageSlice";
 import {Link} from "react-router-dom";
-const CardDetails = () => {
+
+const CardDetails = ({firstname, lastname}) => {
+
   const dispatch = useDispatch();
 
   const {cardNo,firstName,lastName,validity,ccvNo,vendor} = useSelector((state)=> state.homepage)
-  const {cards} = useSelector((state) => state.homepage);
-  // const handleAddCard = () => {
-  //   dispatch(newCard());
-   
-  // };
-// console.log(handleAddCard);
-
-// const handleAddCardNo = ()=>{
-//   let cardNoValue = document.querySelector("#cardNumber").value;
-//   console.log(cardNoValue);
-//     console.log(typeof(cardNoValue));
-//     dispatch(addCardNo(cardNoValue));
-// }
-
+  
+  
   const cardDetailsInputs = () => {
      
       let cardNoValue = document.querySelector("#cardNumber").value;
       console.log("cardValue:", cardNoValue);
-    
-      let firstNameValue = document.querySelector("#firstNameInput").value;
-      let lastNameValue = document.querySelector("#lastNameInput").value;
+      // let firstNameValue = document.querySelector("#firstNameInput").value;
+      let firstNameValue = firstname;
+      let lastNameValue = lastname;
       let expiryDateValue = document.querySelector("#expiryDate").value;
       let ccvValue = document.querySelector("#ccv").value;
       let vendorValue = document.querySelector("#dropdown").value;
@@ -57,9 +47,9 @@ const CardDetails = () => {
                 </ul>
 
 </div>
-            CardNumber: <input type="tel" id="cardNumber"/>
-            Firstname:<input type="text" id="firstNameInput"/>
-            Lastname:<input type="text" id="lastNameInput"/>
+            CardNumber: <input type="tel" id="cardNumber" onFocus={}/>
+            Firstname:<input type="text" id="firstNameInput" disabled/>
+            Lastname:<input type="text" id="lastNameInput" disabled/>
             Valid thru: <input type="date" id="expiryDate"/>
             CCV:<input type="tel" id="ccv"/>
             <br/>
@@ -70,11 +60,7 @@ const CardDetails = () => {
             <option value="American Express">American Express</option>
           </select>
             <br/>
-            <Link to={{
-              pathname: "/",
-              firstName: cards.firstName,
-              lastName:cards.lastName
-            }}>
+            <Link to = "/">
             {/* <button onClick= {() => {dispatch(newCard())}}>Add card</button> */}
             <button onClick= {()=> {dispatch(newCard(cardDetailsInputs()))}}>Add card</button>
             </Link>

@@ -94,6 +94,7 @@ const homepageSlice = createSlice({
     },
     addVendor: (state, action) => {
       state.addCard.vendor = action.payload;
+<<<<<<< HEAD
     },
     newCard: (state) => {
       state.cards.push(state.addCard);
@@ -110,6 +111,14 @@ const homepageSlice = createSlice({
 
       console.log(state.addCard);
     },
+=======
+      
+  },
+  newCard:(state) => {
+    state.cards.push(state.addCard);
+    //  console.log(state.addCard);
+  }
+>>>>>>> master
   },
 });
 
