@@ -94,31 +94,12 @@ const homepageSlice = createSlice({
     },
     addVendor: (state, action) => {
       state.addCard.vendor = action.payload;
-<<<<<<< HEAD
-    },
-    newCard: (state) => {
-      state.cards.push(state.addCard);
-
-      //  state.addCard = {
-      //    id: state.cards[action.payload].id,
-      //    firstName:state.cards[action.payload].firstName,
-      //    lastName:state.cards[action.payload].lastName,
-      //    cardNo:state.cards[action.payload].cardNo,
-      //    validity:state.cards[action.payload].validity,
-      //    ccvNo:state.cards[action.payload].ccvNo,
-      //    vendor:state.cards[action.payload].vendor,
-      //  };
-
-      console.log(state.addCard);
-    },
-=======
       
   },
   newCard:(state) => {
     state.cards.push(state.addCard);
     //  console.log(state.addCard);
   }
->>>>>>> master
   },
 });
 
