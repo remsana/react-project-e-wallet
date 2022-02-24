@@ -11,6 +11,7 @@ function Cards() {
   let { cards, activeCard } = useSelector((state) => state.homepage);
   const { userName, status } = useSelector((state) => state.api);
 
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -43,6 +44,7 @@ function Cards() {
             </div>
           );
         })}
+
         {cards.length < 3 && userName ? (
           <Link
             to={{
@@ -51,6 +53,7 @@ function Cards() {
               lastName: userName.name.last,
             }}
           >
+<<<<<<< HEAD
             <button
               onClick={() => {
                 console.log(`${userName.name.first}`);
@@ -61,6 +64,13 @@ function Cards() {
               {" "}
               Add a new card
             </button>
+=======
+            <button onClick= {() => {
+              console.log(`${userName.name.first}`)
+              console.log(`${userName.name.last}`)
+            }}className={style.AddNewCardBtn}> Add a new card</button>
+
+>>>>>>> master
           </Link>
         ) : (
           console.log("cant add")
