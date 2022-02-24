@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 function Card({ card, index }) {
   const dispatch = useDispatch();
 
-  const handleDeleteCard = (id) => {
-    dispatch(deleteCard(id));
+  const handleDeleteCard = (index) => {
+    dispatch(deleteCard(index));
   };
 
   const handleMoveCard = (index) => {
@@ -27,7 +27,7 @@ function Card({ card, index }) {
       </div>
       <div className={style.buttonDiv}>
         <button className={style.button} onClick = {() => {
-        handleDeleteCard(card.id);
+        handleDeleteCard(index);
       }}>delete</button>
        <button className={style.button} >reverse</button>
         <button className={style.button} onClick={() => {
