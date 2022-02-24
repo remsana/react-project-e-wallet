@@ -7,7 +7,7 @@ const Addcardpage = (props) => {
             <h2>Fill the following details to add a new card:</h2>
             {/* render a component where one can fill in details */}
             <div id="cardDetails">
-                <CardDetails/>
+                <CardDetails firstname = {props.location.firstName} lastname={props.location.lastName}/>
             {/* Enter the number:<input type="number" />
             Enter your full name:<input type="text"/>
             Valid through:<input type="date" />
