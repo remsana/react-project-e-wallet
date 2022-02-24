@@ -9,15 +9,16 @@ import { activeCardDetails } from "../redux/homepageSlice";
 
 function Cards() {
   let { cards, activeCard } = useSelector((state) => state.homepage);
-  const { userName, status } = useSelector((state) => state.api);
-
+  const { userName } = useSelector((state) => state.api);
 
   const dispatch = useDispatch();
 
+  //Api
   useEffect(() => {
     dispatch(getName());
   }, []);
 
+  //Username been sent to update in active card object
   if (userName) {
     dispatch(activeCardDetails(userName));
   }

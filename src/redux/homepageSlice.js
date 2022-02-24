@@ -13,26 +13,7 @@ const homepageSlice = createSlice({
       vendor: "MasterCard",
     },
 
-    cards: [
-      {
-        id: 2,
-        cardNo: "987654321",
-        firstName: "",
-        lastName: "",
-        validity: "",
-        ccvNo: "",
-        vendor: "Visa",
-      },
-      {
-        id: 3,
-        cardNo: "123456789",
-        firstName: "",
-        lastName: "",
-        validity: "",
-        ccvNo: "",
-        vendor: "American Express",
-      },
-    ],
+    cards: [],    
 
     addCard: {
       id: "",
@@ -46,7 +27,7 @@ const homepageSlice = createSlice({
   },
   reducers: {
     activeCardDetails: (state, action) => {
-      // console.log(action.payload);
+      console.log(action.payload);    
       state.activeCard.firstName = action.payload.name.first;
       state.activeCard.lastName = action.payload.name.last;
       state.activeCard.id = state.activeCard.id;
