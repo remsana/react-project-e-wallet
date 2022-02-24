@@ -19,23 +19,23 @@ function Cards() {
   }, []);
 
   if (userName) {
-    dispatch(activeCardDetails(userName))}  
+    dispatch(activeCardDetails(userName));
+  }
 
-   return (
+  return (
     <>
-    
       {userName && (
         <h1>
           Welcome {userName.name.first} {userName.name.last} !
         </h1>
-        
       )}
       <div className={style.cardDiv}>
         <div className={style.cardActive}>
           <h4>
-            {activeCard.firstName} {activeCard.lastName}
+            {activeCard.id}. {activeCard.firstName} {activeCard.lastName}
           </h4>
           <h5>{activeCard.cardNo}</h5>
+          <h5>{activeCard.vendor}</h5>
         </div>
         {cards.map((card, i) => {
           return (
@@ -50,14 +50,19 @@ function Cards() {
             to={{
               pathname: "/addcard",
               firstName: userName.name.first,
-              lastName: userName.name.last
+              lastName: userName.name.last,
             }}
           >
-            <button onClick= {() => {
-              console.log(`${userName.name.first}`)
-              console.log(`${userName.name.last}`)
-            }}className={style.AddNewCardBtn}> Add a new card</button>
-
+            <button
+              onClick={() => {
+                console.log(`${userName.name.first}`);
+                console.log(`${userName.name.last}`);
+              }}
+              className={style.AddNewCardBtn}
+            >
+              {" "}
+              Add a new card
+            </button>
           </Link>
         ) : (
           console.log("cant add")

@@ -16,16 +16,24 @@ function Card({ card, index }) {
 
   return (
     <div
-      className={style.card} 
-      onClick={() => {
-        handleMoveCard(index);
-      }} onDoubleClick = {() => {
-        handleDeleteCard(card.id);
-      }}
+      className={style.cardContainer}       
     >
-      <h6>
-         {card.firstName} {card.lastName}
-      </h6>
+      <div className={style.card} >
+      <h4>
+        {card.id}. {card.firstName} {card.lastName}
+      </h4>
+      <h5>{card.cardNo}</h5>
+      <h5>{card.vendor}</h5>
+      </div>
+      <div className={style.buttonDiv}>
+        <button className={style.button} onClick = {() => {
+        handleDeleteCard(card.id);
+      }}>delete</button>
+       <button className={style.button} >reverse</button>
+        <button className={style.button} onClick={() => {
+        handleMoveCard(index);
+      }}>active</button>
+      </div>
     </div>
   );
 }
