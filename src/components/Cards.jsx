@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import Card from "./Card";
 import style from "./Card.module.css";
-import { getName } from "../redux/apiSlice";
+
 
 function Cards({ userName }) {
   let { cards, activeCard } = useSelector((state) => state.homepage);
