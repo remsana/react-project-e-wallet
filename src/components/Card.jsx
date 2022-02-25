@@ -29,7 +29,7 @@ function Card({ card, index, first, last }) {
         <button className={style.button} onClick = {() => {
         handleDeleteCard(index);
       }}>delete</button>
-       <button className={style.button} >reverse</button>
+       
         <button className={style.button} onClick={() => {
         handleMoveCard(index);
       }}>active</button>
