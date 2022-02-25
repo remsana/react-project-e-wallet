@@ -30,11 +30,16 @@ const CardDetails = ({firstname, lastname}) => {
    
   // cardDetailsInputs();
 
+// let cardInput = document.querySelector("#cardNumber");
+// cardInput.onkeyup = function () {
+//   document.querySelector("#printCardNo").innerHTML = cardInput.value;
+// };
     return(
         <div >
            
             <div className="details">
             <div className="Card">
+            {/* <li id="printCardNo"></li> */}
                 <ul>
                  
                 <li>{cardNo}</li>
@@ -47,6 +52,10 @@ const CardDetails = ({firstname, lastname}) => {
                 </ul>
 
 </div>
+
+
+
+     
             CardNumber: <input type="tel" id="cardNumber" />
             Firstname:<input type="text" id="firstNameInput" disabled/>
             Lastname:<input type="text" id="lastNameInput" disabled/>
