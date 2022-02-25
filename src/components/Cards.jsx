@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Card from "./Card";
@@ -8,13 +8,6 @@ import { getName } from "../redux/apiSlice";
 
 function Cards({ userName }) {
   let { cards, activeCard } = useSelector((state) => state.homepage);
-
-  const dispatch = useDispatch();
-
-  //Api
-  useEffect(() => {
-    dispatch(getName());
-  }, []);
 
   return (
     <>
@@ -49,10 +42,12 @@ function Cards({ userName }) {
           );
         })}
 
-        {cards.length < 3 ? (
+{cards.length < 3 && userName ? (
           <Link
             to={{
               pathname: "/addcard",
+              firstName: userName.name.first,
+              lastName: userName.name.last,
             }}
           >
             <button className={style.AddNewCardBtn}> Add a new card</button>
