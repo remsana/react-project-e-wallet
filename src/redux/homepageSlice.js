@@ -27,7 +27,7 @@ const homepageSlice = createSlice({
   },
   reducers: {
     activeCardDetails: (state, action) => {
-      console.log(action.payload);    
+      // console.log(action.payload);    
       state.activeCard.firstName = action.payload.name.first;
       state.activeCard.lastName = action.payload.name.last;
       state.activeCard.id = state.activeCard.id;
