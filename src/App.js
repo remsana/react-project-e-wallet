@@ -2,11 +2,21 @@ import "./App.css";
 import Homepage from "./pages/Homepage";
 import Addcardpage from "./pages/Addcardpage";
 import {Switch, Route} from "react-router-dom";
-import { useSelector} from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
+import { getName } from "./redux/apiSlice";
+import { useEffect } from "react";
 
 function App() {
 
-  const { userName } = useSelector((state) => state.api);
+  //getting the API from apiSlice 
+  const { userName } = useSelector((state) => state.api);  
+  
+   //fetching the Api once
+  const dispatch = useDispatch(); 
+  useEffect(() => {
+    dispatch(getName());
+  }, []);
+
 
   return (
     <div className="App">
