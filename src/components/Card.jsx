@@ -3,7 +3,7 @@ import style from "./Card.module.css";
 import { deleteCard, moveCard } from "../redux/homepageSlice";
 import { useDispatch } from "react-redux";
 
-function Card({ card, index }) {
+function Card({ card, index, first, last }) {
   const dispatch = useDispatch();
 
   const handleDeleteCard = (index) => {
@@ -20,7 +20,7 @@ function Card({ card, index }) {
     >
       <div className={style.card} >
       <h4>
-        {card.id}. {card.firstName} {card.lastName}
+        {first.toUpperCase()} {last.toUpperCase()}
       </h4>
       <h5>{card.cardNo}</h5>
       <h5>{card.vendor}</h5>
@@ -29,7 +29,7 @@ function Card({ card, index }) {
         <button className={style.button} onClick = {() => {
         handleDeleteCard(index);
       }}>delete</button>
-       <button className={style.button} >reverse</button>
+       
         <button className={style.button} onClick={() => {
         handleMoveCard(index);
       }}>active</button>
