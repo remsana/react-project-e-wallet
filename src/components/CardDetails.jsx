@@ -1,12 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import {addCardNo, addFirstName,addLastName, addValidity,addCCV,addVendor,newCard} from "../redux/homepageSlice";
 import {Link} from "react-router-dom";
+import { useState } from "react";
+
 
 const CardDetails = ({firstname, lastname}) => {
 
   const dispatch = useDispatch();
 
-  const {cardNo,firstName,lastName,validity,ccvNo,vendor} = useSelector((state)=> state.homepage)
+  // const {cardNo,firstName,lastName,validity,ccvNo,vendor} = useSelector((state)=> state.homepage)
   
   
   const cardDetailsInputs = () => {
@@ -29,18 +31,25 @@ const CardDetails = ({firstname, lastname}) => {
   }
    
   // cardDetailsInputs();
+const[cardNoInput, setCardNoInput] = useState();
+const[validityInput, setValidityInput] = useState();
+const[ccvInput,setCcvInput] = useState();
 
-// let cardInput = document.querySelector("#cardNumber");
-// cardInput.onkeyup = function () {
-//   document.querySelector("#printCardNo").innerHTML = cardInput.value;
-// };
     return(
         <div >
            
             <div className="details">
             <div className="Card">
-            {/* <li id="printCardNo"></li> */}
-                <ul>
+            <p>{cardNoInput}</p>
+            {firstname && <p>
+
+{firstname.toUpperCase()} {lastname.toUpperCase()}
+
+</p>}
+            <p>{validityInput}</p>
+            <p>{ccvInput}</p>
+           
+                {/* <ul>
                  
                 <li>{cardNo}</li>
                 <li>{firstName}</li>
@@ -49,22 +58,25 @@ const CardDetails = ({firstname, lastname}) => {
                 <li>{ccvNo}</li>
                 <li>{vendor}</li>
 
-                </ul>
+                </ul> */}
 
 </div>
 
 
 
      
-            CardNumber: <input type="tel" id="cardNumber" />
-            Firstname:<input type="text" id="firstNameInput" disabled/>
-            Lastname:<input type="text" id="lastNameInput" disabled/>
-            Valid thru: <input type="date" id="expiryDate"/>
-            CCV:<input type="tel" id="ccv"/>
+            CardNumber: <input type="tel" id="cardNumber" onChange={(e)=>{setCardNoInput(e.target.value)}}/>
+            <div className="firstNameContainer">
+            {firstname && <p>{firstname.toUpperCase()} {lastname.toUpperCase()}</p>}
+            </div>
+            {/* Firstname:<input type="text" id="firstNameInput" disabled/>
+            Lastname:<input type="text" id="lastNameInput" disabled/> */}
+            Valid thru: <input type="date" id="expiryDate" onChange={(e) =>{setValidityInput(e.target.value)}}/>
+            CCV:<input type="tel" id="ccv" onChange={(e) =>{setCcvInput(e.target.value)}}/>
             <br/>
-            <select id="dropdown">
+            <select id="dropdown" >
             <option disabled>--Select--</option>
-            <option value="Master Card">Master Card</option>
+            <option value="Master Card" >Master Card</option>
             <option value="Visa">Visa</option>
             <option value="American Express">American Express</option>
           </select>
