@@ -15,26 +15,33 @@ function Card({ card, index, first, last }) {
   };
 
   return (
-    <div
-      className={style.cardContainer}       
-    >
-      <div className={style.card} >
-      <h4>
-        {first.toUpperCase()} {last.toUpperCase()}
-      </h4>
-      <h5>{card.cardNo}</h5>
-      <h5>{card.vendor}</h5>
+    <div className={style.cardContainer}>
+      <div
+        className={style.card}
+        onClick={() => {
+          handleMoveCard(index);
+        }}
+        onDoubleClick={() => {
+          handleDeleteCard(index);
+        }}
+      >
+        <h4>
+          {first.toUpperCase()} {last.toUpperCase()}
+        </h4>
+        <h5>{card.cardNo}</h5>
+        <h5>{card.vendor}</h5>
       </div>
       <div className={style.buttonDiv}>
-        <button className={style.button} onClick = {() => {
+        {/* <button className={style.button} onClick = {() => {
         handleDeleteCard(index);
-      }}>delete</button>
-       
-        <button className={style.button} onClick={() => {
+      }}>delete</button> */}
+
+        {/* <button className={style.button} onClick={() => {
         handleMoveCard(index);
-      }}>active</button>
+      }}>active</button> */}
       </div>
     </div>
+
   );
 }
 
