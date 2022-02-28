@@ -8,8 +8,8 @@ const homepageSlice = createSlice({
       cardNo: "5121 5121 5121 5121",
       firstName: "",
       lastName: "",
-      validity: "",
-      ccvNo: "",
+      validity: "09/22",
+      ccvNo: "111",
       vendor: "MasterCard",
     },
 
