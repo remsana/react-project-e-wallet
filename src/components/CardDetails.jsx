@@ -65,14 +65,30 @@ const[ccvInput,setCcvInput] = useState();
 
 
      
-            CardNumber: <input type="tel" id="cardNumber" onChange={(e)=>{setCardNoInput(e.target.value)}}/>
+            CardNumber: <input
+            aria-required 
+            type="tel" 
+            id="cardNumber" 
+            placeholder="XXXX XXXX XXXX XXXX"
+            onChange={(e)=>{setCardNoInput(e.target.value =e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim())}}
+            maxLength="19"
+            />
             <div className="firstNameContainer">
             {firstname && <p>{firstname.toUpperCase()} {lastname.toUpperCase()}</p>}
             </div>
             {/* Firstname:<input type="text" id="firstNameInput" disabled/>
             Lastname:<input type="text" id="lastNameInput" disabled/> */}
-            Valid thru: <input type="date" id="expiryDate" onChange={(e) =>{setValidityInput(e.target.value)}}/>
-            CCV:<input type="tel" id="ccv" onChange={(e) =>{setCcvInput(e.target.value)}}/>
+            Valid thru: <input 
+            type="text" 
+            id="expiryDate" 
+            placeholder="MM/YY"
+            onChange={(e) =>{setValidityInput(e.target.value)}}/>
+            CCV:<input 
+            type="tel" 
+            id="ccv" 
+            onChange={(e) =>{setCcvInput(e.target.value)}} 
+            placeholder="---"
+            maxLength="3"/>
             <br/>
             <select id="dropdown" >
             <option disabled>--Select--</option>
