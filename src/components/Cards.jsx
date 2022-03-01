@@ -18,19 +18,33 @@ function Cards({ userName }) {
         <div className={style.cardActive}>
           <div className={style.theCard}>
             <div className={style.cardFront}>
-              <h3>{activeCard.cardNo}</h3>
-              {userName && (
-                <h4>
-                  {userName.name.first.toUpperCase()}{" "}
-                  {userName.name.last.toUpperCase()}
-                </h4>
-              )}
-              <h5>Valid Thru {activeCard.validity}</h5>
-              <h5>{activeCard.vendor}</h5>
+              <div className={style.mapImg}>
+                <div className={style.row}>
+                  <div className={style.chip}></div>
+                  <div className={style.visa}></div>
+                </div>
+                <h3 className={style.cardNumber}>{activeCard.cardNo}</h3>
+                <div className={style.row}>
+                  <h6>CARD HOLDER</h6>
+                  <h6>VALID THRU</h6>
+                </div>
+                <div className={style.row}>
+                  {userName && (
+                    <p>
+                      {userName.name.first.toUpperCase()}{" "}
+                      {userName.name.last.toUpperCase()}
+                    </p>
+                  )}
+                  <p>{activeCard.validity}</p>
+                </div>
+              </div>
             </div>
             <div className={style.cardBack}>
-              <div className={style.stripe}></div>
-              <p>CVV: {activeCard.ccvNo}</p>
+              <div className={style.strip}></div>
+              <div className={style.row}>
+                <div className={style.patternImage}></div>
+                <p className={style.cvv}>{activeCard.ccvNo}</p>
+              </div>
             </div>
           </div>
         </div>
