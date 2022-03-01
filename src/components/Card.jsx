@@ -25,6 +25,7 @@ function Card({ card, index, first, last }) {
       }}
     >
       <div className={style.theCard}>
+        {/* <div className={card.vendor = "visa" ? "style.visaCardFront" : card.vendor = "Master Card" ? "style.masterCardFront" : "style.amexCardFront"}> */}
         <div className={style.cardFront}>
           <h5>{card.cardNo}</h5>
           <h4>
@@ -34,7 +35,7 @@ function Card({ card, index, first, last }) {
           <h5>{card.vendor}</h5>
         </div>
         <div className={style.cardBack}>
-          <div className={style.stripe}></div>
+          <div className={style.strip}></div>
           <p>CVV: {card.ccvNo}</p>
         </div>
       </div>
