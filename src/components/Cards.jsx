@@ -25,7 +25,7 @@ function Cards({ userName }) {
                 </div>
                 <h3 className={style.cardNumber}>{activeCard.cardNo}</h3>
                 <div className={style.row}>
-                  <h6>CARD HOLDER</h6>
+                  <h6></h6>
                   <h6>VALID THRU</h6>
                 </div>
                 <div className={style.row}>
