@@ -69,6 +69,7 @@ const homepageSlice = createSlice({
     },
     addValidity: (state, action) => {
       state.addCard.validity = action.payload;
+      console.log("validity:", state.addCard.validity);
     },
     addCCV: (state, action) => {
       state.addCard.ccvNo = action.payload;
