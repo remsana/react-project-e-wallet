@@ -2,56 +2,156 @@
   text-align: center;
 }
 
+input {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s;
+}
 
-  input {
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s;
-  }
-
-  .details{
-   
+.details {
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
 
-  }
+.Card {
+  border-radius: 25px;
+  border: 2px solid black;
+  margin: 50px;
+  padding: 20px;
+  background-color: lightcyan;
+  height: 300px;
+  width: 500px;
+}
 
-  .Card{
-   border-radius: 25px;
-     border:2px solid black;
-     margin:50px;
-     padding: 20px;
-     background-color: lightcyan;
-     height: 300px;
-     width:500px;
-    
+.firstNameContainer {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  height: 18px;
+  width: 12%;
+  margin: 10px 5px 5px 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Card styling */
+.visaCardFront,
+.masterCardFront,
+.amexCardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.visaCardBack,
+.masterCardBack,
+.amexCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.visaCardFront,
+.visaCardBack {
+  background-image: linear-gradient(45deg, rgb(0, 55, 103), rgb(0, 111, 198));
+  color: beige;
+}
+
+.masterCardFront,
+.masterCardBack {
+  background-image: linear-gradient(45deg, rgb(123, 206, 18), rgb(44, 96, 15));
+  color: white;
+}
+
+.amexCardFront,
+.amexCardBack {
+  background-image: linear-gradient(45deg, rgb(127, 127, 127), rgb(73, 75, 76));
+  color: beige;
+}
+
+.visa, .masterCard, .amexCard {  
+  background-size: cover;
+  background-repeat: no-repeat;  
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.visa {
+  background-image: url(./images/visa.png);  
+  height: 25px;
+  width: 80px; 
+}
+
+.masterCard {
+  background-image: url(./images/mastercard.png); 
+  height: 50px;
+  width: 80px; 
+}
+
+.amexCard {
+  background-image: url(./images/AE.png);  
+  height: 50px;
+  width: 40px; 
+}
+
+.mapImg,
+.masterCardImg,
+.amexCardImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.mapImg {
+  background-image: url(./images/map.png);
+  opacity: 0.9;
+}
+
+.masterCardImg {
+  background-image: url(./images/tree.png);
+}
+
+.amexCardImg {
+  background-image: url(./images/greyPattern.jpg);
+}
 
 
-  }
+/* Header styling */
+.strong {
 
-  .firstNameContainer{
-    
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    height: 18px;
-    width: 12%;
-    margin: 10px 5px 5px 5px;
-    padding: 20px;
-    text-align: center;
-  }
-
+  color: darkblue;
+  font-weight: bolder;
+  font-size: larger;
+}

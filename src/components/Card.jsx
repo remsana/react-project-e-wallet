@@ -25,30 +25,65 @@ function Card({ card, index, first, last }) {
       }}
     >
       <div className={style.theCard}>
-        {/* <div className={card.vendor = "visa" ? "style.visaCardFront" : card.vendor = "Master Card" ? "style.masterCardFront" : "style.amexCardFront"}> */}
-        <div className={style.cardFront}>
-          <h5>{card.cardNo}</h5>
-          <h4>
-            {first.toUpperCase()} {last.toUpperCase()}
-          </h4>
-          <h5>Valid Thru {card.validity}</h5>
-          <h5>{card.vendor}</h5>
+        <div
+          className={
+            card.vendor == "Visa"
+              ? "visaCardFront"
+              : card.vendor == "Master Card"
+              ? "masterCardFront"
+              : "amexCardFront"
+          }
+        >
+          <div
+            className={
+              card.vendor == "Visa"
+                ? "mapImg"
+                : card.vendor == "Master Card"
+                ? "masterCardImg"
+                : "amexCardImg"
+            }
+          >
+            <div className={style.row}>
+              <div className={style.chip}></div>
+              <div
+                className={
+                  card.vendor == "Visa"
+                    ? "visa"
+                    : card.vendor == "Master Card"
+                    ? "masterCard"
+                    : "amexCard"
+                }
+              ></div>
+            </div>
+            <h3 className={style.cardNumber}>{card.cardNo}</h3>
+            <div className={style.row}>
+              <h6></h6>
+              <h6>VALID THRU</h6>
+            </div>
+            <div className={style.row}>
+              <p>
+                {first.toUpperCase()} {last.toUpperCase()}
+              </p>
+              <p>{card.validity}</p>
+            </div>
+          </div>
         </div>
-        <div className={style.cardBack}>
+        <div
+          className={
+            card.vendor == "Visa"
+              ? "visaCardBack"
+              : card.vendor == "Master Card"
+              ? "masterCardBack"
+              : "amexCardBack"
+          }
+        >
           <div className={style.strip}></div>
-          <p>CVV: {card.ccvNo}</p>
+          <div className={style.row}>
+            <div className={style.patternImage}></div>
+            <p className={style.cvv}>{card.ccvNo}</p>
+          </div>
         </div>
       </div>
-
-      {/* <div className={style.buttonDiv}> */}
-      {/* <button className={style.button} onClick = {() => {
-        handleDeleteCard(index);
-      }}>delete</button> */}
-
-      {/* <button className={style.button} onClick={() => {
-        handleMoveCard(index);
-      }}>active</button> */}
-      {/* </div> */}
     </div>
   );
 }

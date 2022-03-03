@@ -10,7 +10,7 @@ const homepageSlice = createSlice({
       lastName: "",
       validity: "09/22",
       ccvNo: "111",
-      vendor: "MasterCard",
+      vendor: "Visa",
     },
 
     cards: [],    
