@@ -8,20 +8,40 @@ function Cards({ userName }) {
   let { cards, activeCard } = useSelector((state) => state.homepage);
 
   return (
-    <>
-      {userName && (
-        <h1>
-          Welcome {userName.name.first} {userName.name.last} !
-        </h1>
-      )}
+        <>
+     
       <div className={style.allCardsContainer}>
         <div className={style.cardActive}>
           <div className={style.theCard}>
-            <div className={style.cardFront}>
-              <div className={style.mapImg}>
+            <div
+              className={
+                activeCard.vendor == "Visa"
+                  ? "visaCardFront"
+                  : activeCard.vendor == "Master Card"
+                  ? "masterCardFront"
+                  : "amexCardFront"
+              }
+            >
+              <div
+                className={
+                  activeCard.vendor == "Visa"
+                    ? "mapImg"
+                    : activeCard.vendor == "Master Card"
+                    ? "masterCardImg"
+                    : "amexCardImg"
+                }
+              >
                 <div className={style.row}>
                   <div className={style.chip}></div>
-                  <div className={style.visa}></div>
+                  <div
+                    className={
+                      activeCard.vendor == "Visa"
+                        ? "visa"
+                        : activeCard.vendor == "Master Card"
+                        ? "masterCard"
+                        : "amexCard"
+                    }
+                  ></div>
                 </div>
                 <h3 className={style.cardNumber}>{activeCard.cardNo}</h3>
                 <div className={style.row}>
@@ -39,7 +59,15 @@ function Cards({ userName }) {
                 </div>
               </div>
             </div>
-            <div className={style.cardBack}>
+            <div
+              className={
+                activeCard.vendor == "Visa"
+                  ? "visaCardBack"
+                  : activeCard.vendor == "Master Card"
+                  ? "masterCardBack"
+                  : "amexCardBack"
+              }
+            >
               <div className={style.strip}></div>
               <div className={style.row}>
                 <div className={style.patternImage}></div>
