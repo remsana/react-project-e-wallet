@@ -150,8 +150,100 @@ input {
 
 /* Header styling */
 .strong {
-
   color: darkblue;
   font-weight: bolder;
   font-size: larger;
-}
+} 
+  
+  .Container_addCard{
+    display: flex;
+    flex-direction: row;
+    
+    
+   
+  }
+
+  .Container-2{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: purple;
+  }
+  .Card_addCard{
+     margin:50px;
+    border-radius: 5px; 
+    height: 100%;
+    width: 100%;
+  }
+
+  .CardFront-addCard{
+   border-radius: 5px;
+     
+     margin:10px;
+     padding: 10px;
+     
+     height:200px;
+     width:300px;
+  }
+
+  
+  .Name-addCard{
+    margin: 0;
+  }
+  .CardBack-addCard{
+    border-radius: 5px;
+    border:2px solid black;
+    margin:50px;
+    padding: 10px;
+    background-color:lightcoral;
+    height: 230px;
+    width:320px;
+    top: 0;
+    left: 0;
+  }
+
+  .Chip-addCard{
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .Row-addCard, .Card_addCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+  }
+
+  .CardNo-addCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px 0;
+    padding-top: 10px;
+    font-size: large;
+    
+  }
+
+
+
+  .firstNameContainer{
+    
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 18px;
+    width: 12%;
+    margin: 10px 5px 5px 5px;
+    padding: 20px;
+    text-align: center;
+  }
+
+ 
