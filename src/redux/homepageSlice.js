@@ -20,7 +20,8 @@ const homepageSlice = createSlice({
       cardNo: "",
       firstName: "",
       lastName: "",
-      validity: "",
+      month: "",
+      year:"",
       ccvNo: "",
       vendor: "",
     },
@@ -67,9 +68,11 @@ const homepageSlice = createSlice({
     addLastName: (state, action) => {
       state.addCard.lastName = action.payload;
     },
-    addValidity: (state, action) => {
-      state.addCard.validity = action.payload;
-      console.log("validity:", state.addCard.validity);
+    addMonth: (state, action) => {
+      state.addCard.month = action.payload;
+    },
+    addYear: (state, action) => {
+      state.addCard.year = action.payload;
     },
     addCCV: (state, action) => {
       state.addCard.ccvNo = action.payload;
@@ -92,7 +95,8 @@ export const {
   addCardNo,
   addFirstName,
   addLastName,
-  addValidity,
+  addMonth,
+  addYear,
   addCCV,
   addVendor,
   newCard,
