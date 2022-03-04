@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 
+
 const CardDetails = ({ firstname, lastname }) => {
 
+  
   const dispatch = useDispatch();
   const cardDetailsInputs = () => {
 
@@ -35,6 +37,7 @@ const CardDetails = ({ firstname, lastname }) => {
     <div >
 
       <div className="details">
+      
         <div className="Container_addCard">
           <div className="Card_addCard">
             <div className="Container-2">
@@ -43,7 +46,6 @@ const CardDetails = ({ firstname, lastname }) => {
                   <div className="Chip-addCard"></div>
                   <h3 className="CardNo-addCard">{cardNoInput}</h3>
                   <div className="Row-addCard">
-                    <h6></h6>
                     <h6>VALID THRU</h6>
                   </div>
                   <div className="Row2-addCard">
@@ -69,7 +71,8 @@ const CardDetails = ({ firstname, lastname }) => {
           </div>
         </div>
         <div className="InputContainer">
-        CardNumber: <input
+        <h6>CARD NUMBER:</h6> 
+        <input
           type="tel"
           id="cardNumber"
           placeholder="XXXX XXXX XXXX XXXX"
@@ -77,9 +80,11 @@ const CardDetails = ({ firstname, lastname }) => {
           maxLength="19"
           minLength="19"
         />
+        <h6>CARD HOLDER NAME:</h6>
         <div className="firstNameContainer">
           {firstname && <p>{firstname.toUpperCase()} {lastname.toUpperCase()}</p>}
         </div>
+        <h6>VALID THRU:</h6>
         <div>
           <select id="month" onChange={(e)=> {setMonthInput(e.target.value)}}>
             <option disabled>Month</option>
@@ -109,7 +114,8 @@ const CardDetails = ({ firstname, lastname }) => {
             <option value="31">2031</option>
           </select>
         </div>
-        CCV:<input
+        <h6>CCV:</h6>
+        <input
           type="tel"
           id="ccv"
           onChange={(e) => { setCcvInput(e.target.value = e.target.value.replace(/\D/g, "")) }}
