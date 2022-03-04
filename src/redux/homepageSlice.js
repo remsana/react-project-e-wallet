@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Link } from "react-router-dom";
 
 const homepageSlice = createSlice({
   name: "homepage",
@@ -82,8 +83,12 @@ const homepageSlice = createSlice({
       
   },
   newCard:(state) => {
-    state.cards.push(state.addCard);
-    //  console.log(state.addCard);
+    if(state.addCard.cardNo.length === 19 && state.addCard.ccvNo.length === 3){
+      state.cards.push(state.addCard);
+    }else{
+      {alert("Please check if you have entered the following correctly!\n1.The card number should contain 16 digits!\n2.CCV number should contain only 3 digits. \n3.Enter all the necessary fields!")}
+    
+    }
   }
   },
 });
