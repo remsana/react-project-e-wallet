@@ -99,7 +99,7 @@ function Cards({ userName }) {
               lastName: userName.name.last,
             }}
           >
-            <button className={style.AddNewCardBtn}> Add a new card</button>
+            <button className={style.AddNewCardBtn}> + </button>
           </Link>
         ) : (
           console.log("cant add")
