@@ -158,15 +158,15 @@ input {
   .Container_addCard{
     display: flex;
     flex-direction: row;
-    
-    
-   
   }
 
-  .Container-2{
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: purple;
+  .InputContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid green;
+    background-color: goldenrod;
+    padding: 30px;
   }
   .Card_addCard{
      margin:50px;
@@ -177,26 +177,24 @@ input {
 
   .CardFront-addCard{
    border-radius: 5px;
-     
+     background-image: url(./images/card_addCard.jpg);
+     color: blanchedalmond;
      margin:10px;
-     padding: 10px;
-     
+     padding: 10px; 
      height:200px;
      width:300px;
+     border: 2px solid black;
+     border-radius: 5px;
   }
 
-  
-  .Name-addCard{
-    margin: 0;
-  }
   .CardBack-addCard{
+    background-image: url(./images/back-addCard.jfif);
     border-radius: 5px;
     border:2px solid black;
     margin:50px;
-    padding: 10px;
     background-color:lightcoral;
-    height: 230px;
-    width:320px;
+    height: 215px;
+    width:315px;
     top: 0;
     left: 0;
   }
@@ -218,6 +216,25 @@ input {
     margin: 0 10px;
   }
 
+  .Row-addCard h6{
+    margin: 0;
+    padding-top: 30px;
+    font-size: small;
+  }
+
+  .Row2-addCard p{
+    margin: 0;
+    font-size: large;
+  }
+
+  .Row2-addCard{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin:  10px;
+  }
+
   .CardNo-addCard{
     display: flex;
     align-items: center;
@@ -225,9 +242,24 @@ input {
     margin: 10px 0;
     padding-top: 10px;
     font-size: large;
+  }
+
+  .Strip-addCard{
+    border: 5px solid black;
+    background-color: black;
+    height: 25px;
+    margin: 20px 0;
     
   }
 
+  .Pattern-addCard{
+    background-image: url(./images/pattern.png);
+    height: 30px;
+    border: 2px solid white;
+    background-size: cover;
+    width: 85%;
+    display: block;
+  }
 
 
   .firstNameContainer{
