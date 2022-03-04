@@ -64,7 +64,9 @@ function Card({ card, index, first, last }) {
               <p>
                 {first.toUpperCase()} {last.toUpperCase()}
               </p>
-              <p>{card.validity}</p>
+              <p>
+                {card.month}/{card.year}
+              </p>
             </div>
           </div>
         </div>
