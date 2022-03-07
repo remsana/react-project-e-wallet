@@ -39,10 +39,10 @@ const CardDetails = ({ firstname, lastname }) => {
           <div className="Card_addCard">
             <div className="Container-2">
               <div className="CardFront-addCard">
-                
                   <div className="Chip-addCard"></div>
                   <h3 className="CardNo-addCard">{cardNoInput}</h3>
                   <div className="Row-addCard">
+                    <h6></h6>
                     <h6>VALID THRU</h6>
                   </div>
                   <div className="Row2-addCard">
@@ -54,15 +54,13 @@ const CardDetails = ({ firstname, lastname }) => {
                     }
                   <p>{monthInput}{"/"}{yearInput}</p>
                   </div>
-                
               </div>
             </div>
-
             <div className="CardBack-addCard">
               <div className="Strip-addCard"></div>
               <div className="Row-addCard">
                 <div className="Pattern-addCard"></div>
-              <p>{ccvInput}</p>
+              <p className="ccv-strip">{ccvInput}</p>
               </div>
             </div>
           </div>
@@ -81,9 +79,10 @@ const CardDetails = ({ firstname, lastname }) => {
         <div className="firstNameContainer">
           {firstname && <p>{firstname.toUpperCase()} {lastname.toUpperCase()}</p>}
         </div>
-        <h6>VALID THRU:</h6>
+        <h6 className="valid-thru">VALID THRU:</h6>
         <div className="expiry">
           <select id="month" onChange={(e)=> {setMonthInput(e.target.value)}}>
+            <option disabled selected>Month</option>
             <option value="01">January</option>
             <option value="02">February</option>
             <option value="03">March</option>
@@ -98,6 +97,7 @@ const CardDetails = ({ firstname, lastname }) => {
             <option value="12">December</option>
           </select>
           <select id="year" onChange = {(e)=> {setYearInput(e.target.value)}}>
+            <option disabled selected>Year</option>
             <option value="22">2022</option>
             <option value="23">2023</option>
             <option value="24">2024</option>
@@ -118,8 +118,8 @@ const CardDetails = ({ firstname, lastname }) => {
           placeholder="---"
           maxLength="3" />
         <h6>SELECT VENDOR:</h6>
-        <select id="dropdown">
-          <option disabled selected>--Select--</option>
+        <select id="dropdown" >
+          <option disabled selected value="Select">--Select--</option>
           <option value="Master Card" >Master Card</option>
           <option value="Visa">Visa</option>
           <option value="American Express">American Express</option>
@@ -128,7 +128,6 @@ const CardDetails = ({ firstname, lastname }) => {
         <br />
         
         <Link to="/">
-          {/* <button onClick= {() => {dispatch(newCard())}}>Add card</button> */}
           <button onClick={() => { dispatch(newCard(cardDetailsInputs())) }}>Add card</button>
         </Link>
       </div>

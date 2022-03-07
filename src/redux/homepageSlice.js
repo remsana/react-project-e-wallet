@@ -85,10 +85,10 @@ const homepageSlice = createSlice({
       
   },
   newCard:(state) => {
-    if(state.addCard.cardNo.length === 19 && state.addCard.ccvNo.length === 3){
+    if(state.addCard.cardNo.length === 19 && state.addCard.ccvNo.length === 3 && state.addCard.vendor !== "Select"){
       state.cards.push(state.addCard);
     }else{
-      {alert("Please check if you have entered the following correctly!\n\n1.The card number should contain 16 digits!\n2.CCV number should contain only 3 digits! \n3.Enter all the necessary fields!")}
+      {alert("Please check if you have entered the following correctly!\n\n1.The card number should contain 16 digits!\n2.CCV number should contain minimum 3 digits! \n3.Choose the validity(Month & Year)!\n4.Choose a vendor!")}
       
     }
   }
