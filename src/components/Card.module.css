@@ -1,12 +1,9 @@
 
-.allCardsContainer {
-  /* border: 2px solid red; */
-  border-radius: 5px;
+.allCardsContainer { 
   text-align: center;
   position: absolute;
   top: 50%;
-  left: 50%;
-  
+  left: 50%;  
   transform: translate(-50%, -50%); 
   margin-top: 30px;
 }
@@ -14,12 +11,17 @@
 .activeCardContainer{  
   border: 2px solid black;
   border-radius: 5px;
-  margin-bottom: 3px;
-  /* background-color: grey; */
-  /* background-image: url(../images/active.png);
-  background-size: cover;
-  background-repeat: no-repeat;   */
+  margin-bottom: 20px; 
   box-shadow: -1px -1px 13px 6px rgb(17, 11, 11);
+}
+
+.cardContainer{
+  margin-bottom: 20px;
+
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px; 
+  box-shadow: -1px -1px 13px 6px rgb(189, 185, 185);
 }
 
 .cardActive,
@@ -29,15 +31,7 @@
   height: 175px;
   width: 275px;
   position: relative;
-  cursor: pointer;
-  background-color: lightgray;
-    
-  /* box-shadow: -1px -1px 13px 6px grey; */
-}
-
-.newCard 
-{ 
-  box-shadow: 5px 10px 8px 10px black;
+  cursor: pointer; 
 }
 
 .theCard {
@@ -51,20 +45,6 @@
 .theCard:hover {
   transform: rotateY(180deg);
 }
-
-/* .AddNewCardBtn {
-  
-  margin: 10px;
-  padding-bottom: 25px;
-  padding-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: grey;
-  color: white;
-
-   
-  
-} */
 
 .row {
   display: flex;
