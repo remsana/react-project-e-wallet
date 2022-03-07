@@ -130,6 +130,7 @@ const CardDetails = ({ firstname, lastname }) => {
         </select>
         </div>
         <br />
+        
         <Link to="/">
           {/* <button onClick= {() => {dispatch(newCard())}}>Add card</button> */}
           <button onClick={() => { dispatch(newCard(cardDetailsInputs())) }}>Add card</button>

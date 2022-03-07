@@ -88,7 +88,7 @@ const homepageSlice = createSlice({
       state.cards.push(state.addCard);
     }else{
       {alert("Please check if you have entered the following correctly!\n1.The card number should contain 16 digits!\n2.CCV number should contain only 3 digits. \n3.Enter all the necessary fields!")}
-    
+         
     }
   }
   },

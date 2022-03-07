@@ -11,16 +11,15 @@
   margin-top: 30px;
 }
 
-.cardContainer, .activeCardContainer{  
+.activeCardContainer, .cardContainer{  
+  border: 1px solid;
+  border-radius: 5px;
   margin-bottom: 3px;
-  border-radius: 5px;  
-}
-
-.activeCardContainer{  
-  border: 2px solid;
-  background-image: url(../images/active.png);
+  /* background-color: grey; */
+  /* background-image: url(../images/active.png);
   background-size: cover;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;   */
+  /* box-shadow: -1px 10px 100px -7px rgb(247, 8, 8); */
 }
 
 .cardActive,
@@ -31,6 +30,14 @@
   width: 275px;
   position: relative;
   cursor: pointer;
+  background-color: lightgray;
+    
+  box-shadow: -1px -1px 13px 6px grey;
+}
+
+.cardActive
+{ 
+  box-shadow: -1px -1px 13px 6px rgb(17, 11, 11);
 }
 
 .theCard {
@@ -46,10 +53,11 @@
 }
 
 .AddNewCardBtn {
-  margin-bottom: 20px;
-  margin-top: 10px;
-  padding: 7px;
-  border-radius: 10px;
+  /* margin-bottom: 20px; */
+  margin: 10px;
+  padding-bottom: 25px;
+  padding-top: 10px;
+  border-radius: 5px;
   cursor: pointer;
   background-color: grey;
   color: white;
