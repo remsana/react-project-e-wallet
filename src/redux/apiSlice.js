@@ -4,7 +4,6 @@ export const getName = createAsyncThunk("apiName/getName", async () => {
   let response = await fetch("https://randomuser.me/api/");
   let json = await response.json();
   const item = json.results[0];
-//   console.log(item.name.first);
   
   return item;
 });

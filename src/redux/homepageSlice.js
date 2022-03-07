@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Link } from "react-router-dom";
 
 const homepageSlice = createSlice({
   name: "homepage",
