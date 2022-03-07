@@ -82,7 +82,7 @@ const CardDetails = ({ firstname, lastname }) => {
         <h6 className="valid-thru">VALID THRU:</h6>
         <div className="expiry">
           <select id="month" onChange={(e)=> {setMonthInput(e.target.value)}}>
-            <option disabled selected>Month</option>
+            <option disabled selected value="Month">Month</option>
             <option value="01">January</option>
             <option value="02">February</option>
             <option value="03">March</option>
@@ -97,7 +97,7 @@ const CardDetails = ({ firstname, lastname }) => {
             <option value="12">December</option>
           </select>
           <select id="year" onChange = {(e)=> {setYearInput(e.target.value)}}>
-            <option disabled selected>Year</option>
+            <option disabled selected value="Year">Year</option>
             <option value="22">2022</option>
             <option value="23">2023</option>
             <option value="24">2024</option>
