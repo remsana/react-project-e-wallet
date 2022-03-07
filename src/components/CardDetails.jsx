@@ -2,12 +2,12 @@ import { useDispatch } from "react-redux";
 import { addCardNo, addFirstName, addLastName, addMonth, addYear, addCCV, addVendor, newCard } from "../redux/homepageSlice";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+// import { useSelector } from "react-redux";
 
 
 const CardDetails = ({ firstname, lastname }) => {
 
-  
+  // const {cards, addCard} = useSelector((state)=> state.homepage)
   const dispatch = useDispatch();
   const cardDetailsInputs = () => {
 
@@ -133,7 +133,7 @@ const CardDetails = ({ firstname, lastname }) => {
         
         <Link to="/">
           {/* <button onClick= {() => {dispatch(newCard())}}>Add card</button> */}
-          <button onClick={() => { dispatch(newCard(cardDetailsInputs())) }}>Add card</button>
+          <button className="Button-addCard" onClick={() => { dispatch(newCard(cardDetailsInputs())) }}>Add card</button>
         </Link>
       </div>
     </div>
