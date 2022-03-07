@@ -3,11 +3,11 @@
 }
 
 body {
-  background-image: url(./images/yellow_bg.jpg);
+  background-image: url(./images/yellow_bg_2.jpg);
   background-color: whitesmoke;
   background-size: cover;
-  background-repeat: no-repeat; 
-  height: 100vh; 
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 input {
@@ -315,29 +315,30 @@ input {
   }
 
   /* Header styling */
-.strong {
+/* .strong {
   color: darkblue;
   font-weight: bolder;
   font-size: larger;
   font-style: italic;
-} 
+}  */
 
   .headerContainer {
     margin: 10px;  
     border: 2px solid black;
     border-radius: 5px;   
-    /* background-image: radial-gradient(rgb(180, 182, 223), rgb(48, 47, 45)); */
+    background-image: radial-gradient(#8fbc8f, #004242);
     height: 90px;
-    opacity: 0.6;
-    /* color: white; */
+    /* opacity: 0.6;     */
   }
  
   .header{
     margin: 10px 0;
+    color: black;
   }
 
   .headerTag {   
     margin-top: 0px;
+    color: darkblue;
   }
 
   /* .Button-addCard{

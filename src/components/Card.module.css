@@ -11,15 +11,15 @@
   margin-top: 30px;
 }
 
-.activeCardContainer, .cardContainer{  
-  border: 1px solid;
+.activeCardContainer{  
+  border: 2px solid black;
   border-radius: 5px;
   margin-bottom: 3px;
   /* background-color: grey; */
   /* background-image: url(../images/active.png);
   background-size: cover;
   background-repeat: no-repeat;   */
-  /* box-shadow: -1px 10px 100px -7px rgb(247, 8, 8); */
+  box-shadow: -1px -1px 13px 6px rgb(17, 11, 11);
 }
 
 .cardActive,
@@ -32,12 +32,12 @@
   cursor: pointer;
   background-color: lightgray;
     
-  box-shadow: -1px -1px 13px 6px grey;
+  /* box-shadow: -1px -1px 13px 6px grey; */
 }
 
-.cardActive
+.newCard 
 { 
-  box-shadow: -1px -1px 13px 6px rgb(17, 11, 11);
+  box-shadow: 5px 10px 8px 10px black;
 }
 
 .theCard {
@@ -52,8 +52,8 @@
   transform: rotateY(180deg);
 }
 
-.AddNewCardBtn {
-  /* margin-bottom: 20px; */
+/* .AddNewCardBtn {
+  
   margin: 10px;
   padding-bottom: 25px;
   padding-top: 10px;
@@ -63,14 +63,8 @@
   color: white;
 
    
-  /* font-size: 2rem;
-  border-radius: 50%;
-  padding: 20px;
-  border: solid white 10px;
-  margin: 20px;
-   */
-
-}
+  
+} */
 
 .row {
   display: flex;

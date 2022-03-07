@@ -1,4 +1,4 @@
-const Header = ({userName}) => {
+const Header = ({userName, text}) => {
   return (
     <div className="headerContainer">
       {userName && (
@@ -7,10 +7,9 @@ const Header = ({userName}) => {
         </h1>
       )}   
       
-      <h4 className="headerTag">
-        A <strong className="strong">R</strong>eliable{" "}
-        <strong className="strong">C</strong>ard Management system
-      </h4>
+      <h3 className="headerTag">        
+         {text}
+      </h3>
     </div>
   );
 };

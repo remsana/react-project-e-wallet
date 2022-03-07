@@ -6,8 +6,8 @@ function Homepage({ userName }) {
   // console.log(userName.name.first)
   return (
     <div>
-      <Header userName={userName}/>
-      <Cards userName={userName} />
+      <Header userName={userName} text ={"A Reliable Card Management System"}/>
+      <Cards userName={userName} text=""/>
     </div>
   );
 }
