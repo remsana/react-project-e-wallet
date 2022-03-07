@@ -11,22 +11,20 @@
 .activeCardContainer{  
   border: 2px solid black;
   border-radius: 5px;
-  margin-bottom: 20px; 
+  margin-bottom: 10px; 
   box-shadow: -1px -1px 13px 6px rgb(17, 11, 11);
 }
 
 .cardContainer{
-  margin-bottom: 20px;
-
   border: 2px solid black;
   border-radius: 5px;
-  margin-bottom: 20px; 
+  margin-bottom: 10px; 
   box-shadow: -1px -1px 13px 6px rgb(189, 185, 185);
 }
 
 .cardActive,
 .newCard {
-  margin: 15px;
+  margin: 5px 10px;
   border-radius: 5px;
   height: 175px;
   width: 275px;
