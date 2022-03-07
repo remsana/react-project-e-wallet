@@ -24,7 +24,6 @@ input {
 }
 
 .details {
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,7 +162,6 @@ input {
   border: 2px solid black;
   background-color: #8fbc8f;
   color: #8a3324;
-  /* #e2725b */
   padding: 30px;
   height: 500px;
   width: 630px;
@@ -259,6 +257,12 @@ h6 {
   background-color: black;
   height: 25px;
   margin: 20px 0;
+}
+
+.ccv-strip{
+  background-color: white;
+  color: black;
+  height: 27px;
 }
 
 .Pattern-addCard {
