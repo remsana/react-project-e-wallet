@@ -35,7 +35,8 @@ const homepageSlice = createSlice({
       state.activeCard.lastName = action.payload.name.last;
       state.activeCard.id = state.activeCard.id;
       state.activeCard.cardNo = state.activeCard.cardNo;
-      state.activeCard.validity = state.activeCard.validity;
+      state.activeCard.year = state.activeCard.year;
+      state.activeCard.month = state.activeCard.month;
       state.activeCard.ccvNo = state.activeCard.ccvNo;
       state.activeCard.vendor = state.activeCard.vendor;
     },
@@ -49,7 +50,8 @@ const homepageSlice = createSlice({
         firstName: state.cards[action.payload].firstName,
         lastName: state.cards[action.payload].lastName,
         cardNo: state.cards[action.payload].cardNo,
-        validity: state.cards[action.payload].validity,
+        year: state.cards[action.payload].year,
+        month: state.cards[action.payload].month,
         ccvNo: state.cards[action.payload].ccvNo,
         vendor: state.cards[action.payload].vendor,
       };
