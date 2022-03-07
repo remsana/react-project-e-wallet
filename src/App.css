@@ -3,11 +3,11 @@
 }
 
 body {
-  background-image: url(./images/background_2.jpg);
-  /* background-color: rgb(78, 74, 74); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  /* background-image: url(./images/background_2.jpg); */
+  background-color: whitesmoke;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* height: 100vh; */
 }
 
 input {
@@ -326,7 +326,7 @@ input {
     /* background-image: radial-gradient(rgb(180, 182, 223), rgb(48, 47, 45)); */
     height: 90px;
     opacity: 0.6;
-    color: white;
+    /* color: white; */
   }
  
   .header{
